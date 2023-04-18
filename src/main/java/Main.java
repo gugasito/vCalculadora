@@ -1,43 +1,32 @@
 import java.util.Scanner;
 
 public class Main {
-    static double solCuadratic2(double A, double B, double C) {
-        double sol;
-        sol = (-B - (Math.sqrt((B * B) - 4 * A * C))) / (2 * A);
-        return sol;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Ingrese la coordenada x del primer punto: "); //Siendo X1 y X2 las variables dej eje X para calcular la ecuacion de la recta
+        double x1 = sc.nextDouble();
+        System.out.print("Ingrese la coordenada y del primer punto: ");
+        double y1 = sc.nextDouble();
+        System.out.print("Ingrese la coordenada x del segundo punto: "); //Siendo Y1 y Y2 las variables dej eje Y para calcular la ecuacion de la recta
+        double x2 = sc.nextDouble();
+        System.out.print("Ingrese la coordenada y del segundo punto: ");
+        double y2 = sc.nextDouble();
+        double b = calcularB(x1, y1, x2, y2);
+        double m = calcularM(x1, y1, x2, y2);
+        System.out.println("La ecuación de la recta es y = " + b + "x + " + m);
     }
 
-    public static double solCuadratic1(double A, double B, double C) {
-        double sol;
-        sol = (-B + (Math.sqrt((B * B) - 4 * A * C))) / (2 * A);
-        return sol;
+    public static double calcularB(double x1, double y1, double x2, double y2) {
+        double [] ecuacionRecta = new double[2];
+        double m = (y2 - y1) / (x2 - x1); // pendiente (m)
+        double b = y1 - m * x1; // ordenada en el origen, m es pendiente
+        ecuacionRecta[1] = b;
+        return b;
     }
-
-    public static void llamarEcuacion() {
-        Scanner s = new Scanner(System.in);
-        System.out.println("Ingrese su ecuación de la forma: Ax^2 + Bx + C = 0");
-        System.out.println("A:");
-        double A = s.nextDouble();
-        System.out.println("B:");
-        double B = s.nextDouble();
-        System.out.println("C:");
-        double C = s.nextDouble();
-        if (comprobarEc(A, B, C)) {
-            System.out.println("Las soluciones son imaginarias");
-        } else {
-            try {
-                System.out.println(solCuadratic1(A, B, C));
-                System.out.println(solCuadratic2(A, B, C));
-            } catch (Exception e) {
-                System.out.println("Error en las entradas, ingrese nuevamente");
-                llamarEcuacion();
-            }
-
-        }
-
-    }
-
-    public static boolean comprobarEc(double A, double B, double C) {
-        return ((B * B) - 4 * A * C) < 0;
+    public static double calcularM(double x1, double y1, double x2, double y2) {
+        double[] ecuacionRecta = new double[2];
+        double m = (y2 - y1) / (x2 - x1); // pendiente (m)
+        ecuacionRecta[0] = m;
+        return m;
     }
 }
