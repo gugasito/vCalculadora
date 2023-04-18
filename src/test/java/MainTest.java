@@ -1,36 +1,112 @@
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+package org.example;
+
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
+
 class MainTest {
 
-    @BeforeEach
+    @org.junit.jupiter.api.BeforeEach
     void setUp() {
     }
 
-    @AfterEach
+    @org.junit.jupiter.api.AfterEach
     void tearDown() {
     }
 
-    @Test
-    void testSolCuadratic1() {
-        double resultadoEsperado = -1;
-        assertEquals(Main.solCuadratic1(1, 2, 1), resultadoEsperado);
-        double resultadoEsperado2 = 1;
-        assertEquals(Main.solCuadratic1(2, 4, -6), resultadoEsperado2);
+    @org.junit.jupiter.api.Test
+    void testPerimetroCuadrado() {
+        double resultadoEsperado1 =  16;
+        assertEquals(Main.perimetroCuadrado(4),resultadoEsperado1);
+        double resultadoEsperado2 = 8;
+        assertEquals(Main.perimetroCuadrado(2),resultadoEsperado2);
     }
 
     @Test
-    void testSolCuadratic2() {
-        double resultadoEsperado = -1;
-        assertEquals(Main.solCuadratic2(1, 2, 1), resultadoEsperado);
-        double resultadoEsperado2 = -3;
-        assertEquals(Main.solCuadratic2(2, 4, -6), resultadoEsperado2);
+    void testAreaCuadrado() {
+        double resultadoEsperado1 = 16;
+        assertEquals(Main.areaCuadrado(4),resultadoEsperado1);
+        double resultadoEsperado2 = 4;
+        assertEquals(Main.areaCuadrado(2),resultadoEsperado2);
     }
 
     @Test
-    void testComprobarEc() {
-        assertTrue(Main.comprobarEc(1,-2,5));
-        assertFalse(Main.comprobarEc(2,4,-6));
+    void testPerimetroRectangulo() {
+        double resultadoEsperado1 = 10;
+        assertEquals(Main.perimetroRectangulo(3, 2),resultadoEsperado1);
+        double resultadoEsperado2 = 12;
+        assertEquals(Main.perimetroRectangulo(4, 2),resultadoEsperado2);
+    }
+
+    @Test
+    void testAreaRectangulo() {
+        double resultadoEsperado1 = 6;
+        assertEquals(Main.areaRectangulo(3,2),resultadoEsperado1);
+        double resultadoEsperado2 = 8;
+        assertEquals(Main.areaRectangulo(4,2),resultadoEsperado2);
+    }
+
+    @Test
+    void testPerimetroCirculo() {
+        double resultadoEsperado1 = 12.56;
+        assertEquals(Main.perimetroCirculo(2),resultadoEsperado1);
+        double resultadoEsperado2 = 25.12;
+        assertEquals(Main.perimetroCirculo(4),resultadoEsperado2);
+    }
+
+    @Test
+    void testAreaCirculo() {
+        double resultadoEsperado1 = 12.56;
+        assertEquals(Main.areaCirculo(2),resultadoEsperado1);
+        double resultadoEsperado2 = 50.24;
+        assertEquals(Main.areaCirculo(4),resultadoEsperado2);
+    }
+
+    @Test
+    void testAreaSuperficialEsfera() {
+        double resultadoEsperado1 = 50.24;
+        assertEquals(Main.areaSuperficialEsfera(2),resultadoEsperado1);
+        double resultadoEsperado2 = 200.96;
+        assertEquals(Main.areaSuperficialEsfera(4),resultadoEsperado2);
+    }
+
+    @Test
+    void testVolumenEsfera() {
+        double resultadoEsperado1 =(3/4)*25.12;
+        assertEquals(Main.volumenEsfera(2),resultadoEsperado1);
+        double resultadoEsperado2 = (3/4)*200.96;
+        assertEquals(Main.volumenEsfera(4),resultadoEsperado2);
+    }
+
+    @Test
+    void testAreaSuperficialCubo() {
+        double resultadoEsperado1 = 24;
+        assertEquals(Main.areaSuperficialCubo(2),resultadoEsperado1);
+        double resultadoEsperado2 = 96;
+        assertEquals(Main.areaSuperficialCubo(4),resultadoEsperado2);
+    }
+
+    @Test
+    void testVolumenCubo() {
+        double resultadoEsperado1 = 8;
+        assertEquals(Main.volumenCubo(2),resultadoEsperado1);
+        double resultadoEsperado2 = 64;
+        assertEquals(Main.volumenCubo(4),resultadoEsperado2);
+    }
+
+    @Test
+    void testAreaSuperficialCono() {
+        double resultadoEsperado1 = 37.68;
+        assertEquals(Main.areaSuperficialCono(2,4),resultadoEsperado1);
+        double resultadoEsperado2 = 150.72;
+        assertEquals(Main.areaSuperficialCono(4,8),resultadoEsperado2);
+    }
+
+    @Test
+    void testVolumenCono() {
+        double resultadoEsperado1 = (62.8)/3;
+        assertEquals(Main.volumenCono(2,5),resultadoEsperado1);
+        double resultadoEsperado2 = (502.4)/3;
+        assertEquals(Main.volumenCono(4,10),resultadoEsperado2);
     }
 }
