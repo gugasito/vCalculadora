@@ -1,5 +1,3 @@
-package org.example;
-
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -108,5 +106,20 @@ class MainTest {
         assertEquals(Main.volumenCono(2,5),resultadoEsperado1);
         double resultadoEsperado2 = (502.4)/3;
         assertEquals(Main.volumenCono(4,10),resultadoEsperado2);
+    }
+    @Test
+    void testCalculoDeX() {
+        double resultadoEsperado1 = 14;
+        assertEquals(Main.CalculoDeX(3,2,6,4,3,2),resultadoEsperado1);
+        double resultadoEsperado2 = -0.5;
+        assertEquals(Main.CalculoDeX(0,2,6,4,3,7),resultadoEsperado2);
+    }
+
+    @Test
+    void testCalculoDeY() {
+        double resultadoEsperado1 = -18;
+        assertEquals(Main.CalculoDeY(3,2,6,4,3,2),resultadoEsperado1);
+        double resultadoEsperado2 = 3;
+        assertEquals(Main.CalculoDeY(0,2,6,4,3,7),resultadoEsperado2);
     }
 }
