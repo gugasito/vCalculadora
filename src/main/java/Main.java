@@ -3,6 +3,219 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        menu();
+    }
+
+    public static void menu() {
+        Scanner entrada = new Scanner(System.in);
+        while (true) {
+            System.out.println("Qué desea realizar");
+            System.out.println("1 Operaciones aritméticas");
+            System.out.println("2 Ecuación cuadrática");
+            System.out.println("3 Figuras geométricas");
+            System.out.println("4 Sistema ecuaciones lineales");
+            System.out.println("5 Ecuación de la recta");
+            System.out.println("6 Salir");
+            System.out.println("Ingrese el número de la acción que desea realizar: ");
+            int opcion = entrada.nextInt();
+            switch (opcion) {
+                case 1:
+                    while (true) {
+                        System.out.println("Qué Operación Aritmética desea realizar");
+                        System.out.println("1 Sumar dos números");
+                        System.out.println("2 Restar dos números");
+                        System.out.println("3 Multiplicar dos números");
+                        System.out.println("4 Dividir dos números");
+                        System.out.println("5 El número mayor entre dos números");
+                        System.out.println("6 El número menor entre dos números");
+                        System.out.println("7 Potencia de un número elevado a un segundo número");
+                        System.out.println("8 Calcular un cierto porcentaje de un número");
+                        System.out.println("9 Volver");
+                        System.out.println("Ingrese el número de la acción que desea realizar: ");
+                        int opcion1 = entrada.nextInt();
+                        switch (opcion1) {
+                            case 1:
+                                System.out.println("Ingrese el primer numero: ");
+                                double num1 = entrada.nextDouble();
+                                System.out.println("Ingrese el segundo numero");
+                                double num2 = entrada.nextDouble();
+                                double x1 = sumar(num1, num2);
+                                System.out.println("El resultado es: " + x1);
+                                break;
+                            case 2:
+                                System.out.println("Ingrese el primer numero: ");
+                                num1 = entrada.nextDouble();
+                                System.out.println("Ingrese el segundo numero");
+                                num2 = entrada.nextDouble();
+                                x1 = restar(num1, num2);
+                                System.out.println("El resultado es: " + x1);
+                                break;
+                            case 3:
+                                System.out.println("Ingrese el primer numero: ");
+                                num1 = entrada.nextDouble();
+                                System.out.println("Ingrese el segundo numero");
+                                num2 = entrada.nextDouble();
+                                x1 = multiplicar(num1, num2);
+                                System.out.println("El resultado es: " + x1);
+                                break;
+                            case 4:
+                                System.out.println("Ingrese el primer numero: ");
+                                num1 = entrada.nextDouble();
+                                System.out.println("Ingrese el segundo numero");
+                                num2 = entrada.nextDouble();
+                                x1 = dividir(num1, num2);
+                                System.out.println("El resultado es: " + x1);
+                                break;
+                            case 5:
+                                System.out.println("Ingrese el primer numero: ");
+                                num1 = entrada.nextDouble();
+                                System.out.println("Ingrese el segundo numero");
+                                num2 = entrada.nextDouble();
+                                x1 = mayorNum(num1, num2);
+                                System.out.println("El resultado es: " + x1);
+                                break;
+                            case 6:
+                                System.out.println("Ingrese el primer numero: ");
+                                num1 = entrada.nextDouble();
+                                System.out.println("Ingrese el segundo numero");
+                                num2 = entrada.nextDouble();
+                                x1 = menorNum(num1, num2);
+                                System.out.println("El resultado es: " + x1);
+                                break;
+                            case 7:
+                                System.out.println("Ingrese el primer numero: ");
+                                num1 = entrada.nextDouble();
+                                System.out.println("Ingrese el segundo numero");
+                                num2 = entrada.nextDouble();
+                                x1 = elevado(num1, num2);
+                                System.out.println("El resultado es: " + x1);
+                                break;
+                            case 8:
+                                System.out.println("Ingrese el primer numero: ");
+                                num1 = entrada.nextDouble();
+                                System.out.println("Ingrese el segundo numero");
+                                num2 = entrada.nextDouble();
+                                x1 = porcentaje(num1, num2);
+                                System.out.println("El resultado es: " + x1);
+                                break;
+                            case 9:
+                                System.exit(0);
+                        }
+                    }
+
+                case 2:
+                    llamarEcuacion();
+                case 3:
+                    while (true) {
+                        System.out.println("Operaciones que se pueden realizar");
+                        System.out.println("1 Perímetro de un Cuadrado");
+                        System.out.println("2 Área de un Cuadrado");
+                        System.out.println("3 Perímetro de un Rectangulo");
+                        System.out.println("4 Área de un Rectangulo");
+                        System.out.println("5 Perímetro de un Circulo");
+                        System.out.println("6 Área de un Circulo");
+                        System.out.println("7 Área superficial de una Esfera");
+                        System.out.println("8 Volumen de una Esfera");
+                        System.out.println("9 Área superficial de un Cubo");
+                        System.out.println("10 Volumen de un Cubo");
+                        System.out.println("11 Área superficial de un Cono");
+                        System.out.println("12 Volumen de un Cono");
+                        System.out.println("13 Salir");
+                        System.out.println("Ingrese el número de la operación que desea realizar: ");
+                        int opcion3 = entrada.nextInt();
+                        switch (opcion3) {
+                            case 1 -> {
+                                System.out.println("Ingrese el valor de un lado del Cuadrado: ");
+                                double lado = entrada.nextDouble();
+                                double x1 = perimetroCuadrado(lado);
+                                System.out.println("El resultado es: " + x1);
+                            }
+                            case 2 -> {
+                                System.out.println("Ingrese el valor de un lado del Cuadrado: ");
+                                double lado1 = entrada.nextDouble();
+                                double x2 = areaCuadrado(lado1);
+                                System.out.println("El resultado es: " + x2);
+                            }
+                            case 3 -> {
+                                System.out.println("Ingrese el valor del largo del Rectangulo: ");
+                                double largo = entrada.nextDouble();
+                                System.out.println("Ingrese el valor del ancho del Rectangulo: ");
+                                double ancho = entrada.nextDouble();
+                                double x3 = perimetroRectangulo(largo, ancho);
+                                System.out.println("El resultado es: " + x3);
+                            }
+                            case 4 -> {
+                                System.out.println("Ingrese el valor del largo del Rectangulo: ");
+                                double largo1 = entrada.nextDouble();
+                                System.out.println("Ingrese el valor del ancho del Rectangulo: ");
+                                double ancho1 = entrada.nextDouble();
+                                double x4 = areaRectangulo(largo1, ancho1);
+                                System.out.println("El resultado es: " + x4);
+                            }
+                            case 5 -> {
+                                System.out.println("Ingrese el valor del radio del Circulo: ");
+                                double radio = entrada.nextDouble();
+                                double x5 = perimetroCirculo(radio);
+                                System.out.println("El resultado es: " + x5);
+                            }
+                            case 6 -> {
+                                System.out.println("Ingrese el valor del radio del Circulo: ");
+                                double radio1 = entrada.nextDouble();
+                                double x6 = areaCirculo(radio1);
+                                System.out.println("El resultado es: " + x6);
+                            }
+                            case 7 -> {
+                                System.out.println("Ingrese el valor del radio de la Esfera: ");
+                                double radio2 = entrada.nextDouble();
+                                double x7 = areaSuperficialEsfera(radio2);
+                                System.out.println("El resultado es: " + x7);
+                            }
+                            case 8 -> {
+                                System.out.println("Ingrese el valor del radio de la Esfera: ");
+                                double radio3 = entrada.nextDouble();
+                                double x8 = volumenEsfera(radio3);
+                                System.out.println("El resultado es: " + x8);
+                            }
+                            case 9 -> {
+                                System.out.println("Ingrese el valor de una de las aristas del Cubo: ");
+                                double arista = entrada.nextDouble();
+                                double x9 = areaSuperficialCubo(arista);
+                                System.out.println("El resultado es: " + x9);
+                            }
+                            case 10 -> {
+                                System.out.println("Ingrese el valor de la arista del Cubo: ");
+                                double arista1 = entrada.nextDouble();
+                                double x10 = volumenCubo(arista1);
+                                System.out.println("El resultado es: " + x10);
+                            }
+                            case 11 -> {
+                                System.out.println("Ingrese el valor del radio del Cono: ");
+                                double radio4 = entrada.nextDouble();
+                                System.out.println("Ingrese el valor de la altura inclinada del Cubo: ");
+                                double alturaInclinada = entrada.nextDouble();
+                                double x11 = areaSuperficialCono(radio4, alturaInclinada);
+                                System.out.println("El resultado es: " + x11);
+                            }
+                            case 12 -> {
+                                System.out.println("Ingrese el valor del radio del Cono: ");
+                                double radio5 = entrada.nextDouble();
+                                System.out.println("Ingrese el valor de la altura del Cubo: ");
+                                double altura = entrada.nextDouble();
+                                double x12 = volumenCono(radio5, altura);
+                                System.out.println("El resultado es: " + x12);
+                            }
+                            case 13 -> menu();
+                        }
+                    }
+                case 4:
+                    solucionSistemaEcuaciones();
+                case 5:
+                    formulaRecta();
+                case 6:
+                    System.exit(0);
+
+            }
+        }
 
     }
 
@@ -35,11 +248,12 @@ public class Main {
             y2 = sc.nextDouble();
         } catch (InputMismatchException e) {
             System.out.println("El caracter seleccionado no es valido, por favor intentelo de nuevo");
-            System.exit(1);
+            formulaRecta();
         }
         double b = calcularB(x1, y1, x2, y2);
         double m = calcularM(x1, y1, x2, y2);
         System.out.println("La ecuación de la recta es y = " + b + "x + " + m);
+        menu();
     }
 
     public static void llamarEcuacion() {
@@ -63,112 +277,7 @@ public class Main {
             }
 
         }
-
-    }
-
-    public static void menuGeo() {
-        Scanner entrada = new Scanner(System.in);
-        while (true) {
-            System.out.println("Operaciones que se pueden realizar");
-            System.out.println("1 Perímetro de un Cuadrado");
-            System.out.println("2 Área de un Cuadrado");
-            System.out.println("3 Perímetro de un Rectangulo");
-            System.out.println("4 Área de un Rectangulo");
-            System.out.println("5 Perímetro de un Circulo");
-            System.out.println("6 Área de un Circulo");
-            System.out.println("7 Área superficial de una Esfera");
-            System.out.println("8 Volumen de una Esfera");
-            System.out.println("9 Área superficial de un Cubo");
-            System.out.println("10 Volumen de un Cubo");
-            System.out.println("11 Área superficial de un Cono");
-            System.out.println("12 Volumen de un Cono");
-            System.out.println("13 Salir");
-            System.out.println("Ingrese el número de la operación que desea realizar: ");
-            int opcion = entrada.nextInt();
-            switch (opcion) {
-                case 1 -> {
-                    System.out.println("Ingrese el valor de un lado del Cuadrado: ");
-                    double lado = entrada.nextDouble();
-                    double x1 = perimetroCuadrado(lado);
-                    System.out.println("El resultado es: " + x1);
-                }
-                case 2 -> {
-                    System.out.println("Ingrese el valor de un lado del Cuadrado: ");
-                    double lado1 = entrada.nextDouble();
-                    double x2 = areaCuadrado(lado1);
-                    System.out.println("El resultado es: " + x2);
-                }
-                case 3 -> {
-                    System.out.println("Ingrese el valor del largo del Rectangulo: ");
-                    double largo = entrada.nextDouble();
-                    System.out.println("Ingrese el valor del ancho del Rectangulo: ");
-                    double ancho = entrada.nextDouble();
-                    double x3 = perimetroRectangulo(largo, ancho);
-                    System.out.println("El resultado es: " + x3);
-                }
-                case 4 -> {
-                    System.out.println("Ingrese el valor del largo del Rectangulo: ");
-                    double largo1 = entrada.nextDouble();
-                    System.out.println("Ingrese el valor del ancho del Rectangulo: ");
-                    double ancho1 = entrada.nextDouble();
-                    double x4 = areaRectangulo(largo1, ancho1);
-                    System.out.println("El resultado es: " + x4);
-                }
-                case 5 -> {
-                    System.out.println("Ingrese el valor del radio del Circulo: ");
-                    double radio = entrada.nextDouble();
-                    double x5 = perimetroCirculo(radio);
-                    System.out.println("El resultado es: " + x5);
-                }
-                case 6 -> {
-                    System.out.println("Ingrese el valor del radio del Circulo: ");
-                    double radio1 = entrada.nextDouble();
-                    double x6 = areaCirculo(radio1);
-                    System.out.println("El resultado es: " + x6);
-                }
-                case 7 -> {
-                    System.out.println("Ingrese el valor del radio de la Esfera: ");
-                    double radio2 = entrada.nextDouble();
-                    double x7 = areaSuperficialEsfera(radio2);
-                    System.out.println("El resultado es: " + x7);
-                }
-                case 8 -> {
-                    System.out.println("Ingrese el valor del radio de la Esfera: ");
-                    double radio3 = entrada.nextDouble();
-                    double x8 = volumenEsfera(radio3);
-                    System.out.println("El resultado es: " + x8);
-                }
-                case 9 -> {
-                    System.out.println("Ingrese el valor de una de las aristas del Cubo: ");
-                    double arista = entrada.nextDouble();
-                    double x9 = areaSuperficialCubo(arista);
-                    System.out.println("El resultado es: " + x9);
-                }
-                case 10 -> {
-                    System.out.println("Ingrese el valor de la arista del Cubo: ");
-                    double arista1 = entrada.nextDouble();
-                    double x10 = volumenCubo(arista1);
-                    System.out.println("El resultado es: " + x10);
-                }
-                case 11 -> {
-                    System.out.println("Ingrese el valor del radio del Cono: ");
-                    double radio4 = entrada.nextDouble();
-                    System.out.println("Ingrese el valor de la altura inclinada del Cubo: ");
-                    double alturaInclinada = entrada.nextDouble();
-                    double x11 = areaSuperficialCono(radio4, alturaInclinada);
-                    System.out.println("El resultado es: " + x11);
-                }
-                case 12 -> {
-                    System.out.println("Ingrese el valor del radio del Cono: ");
-                    double radio5 = entrada.nextDouble();
-                    System.out.println("Ingrese el valor de la altura del Cubo: ");
-                    double altura = entrada.nextDouble();
-                    double x12 = volumenCono(radio5, altura);
-                    System.out.println("El resultado es: " + x12);
-                }
-                case 13 -> System.exit(0);
-            }
-        }
+        menu();
     }
 
     public static double perimetroCuadrado(double lado) {
@@ -248,7 +357,7 @@ public class Main {
             F = teclado.nextDouble();
         } catch (InputMismatchException e) {
             System.out.println("ingrese números (Si es decimal use comas)");
-            System.exit(1);
+            solucionSistemaEcuaciones();
         }
         double y = CalculoDeY(A, B, C, D, E, F);
         double x = CalculoDeX(A, B, C, D, E, F);
@@ -256,6 +365,7 @@ public class Main {
 
         System.out.println("El valor de X es: " + x);
         System.out.println("El valor de Y es: " + y);
+        menu();
     }
 
     public static double CalculoDeX(double A, double B, double C, double D, double E, double F) {

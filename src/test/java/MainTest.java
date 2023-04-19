@@ -70,9 +70,9 @@ class MainTest {
 
     @Test
     void testVolumenEsfera() {
-        double resultadoEsperado1 =(3/4)*25.12;
+        double resultadoEsperado1 =((double) 3 /4)*25.12;
         assertEquals(Main.volumenEsfera(2),resultadoEsperado1);
-        double resultadoEsperado2 = (3/4)*200.96;
+        double resultadoEsperado2 = ((double) 3 /4)*200.96;
         assertEquals(Main.volumenEsfera(4),resultadoEsperado2);
     }
 
@@ -118,16 +118,16 @@ class MainTest {
         @Test
         void testCalcularB() {
             double resultadoEsperado1 = 1;
-            assertEquals(EcuacionRecta.calcularB(1,2,3,4),resultadoEsperado1);
+            assertEquals(Main.calcularB(1,2,3,4),resultadoEsperado1);
             double resultadoEsperado2 = -1;
-            assertEquals(EcuacionRecta.calcularB(4,3,2,1),resultadoEsperado2);
+            assertEquals(Main.calcularB(4,3,2,1),resultadoEsperado2);
         }
         @Test
         void testCalcularM() {
             double resultadoEsperado1 = 1;
-            assertEquals(EcuacionRecta.calcularM(1,2,3,4),resultadoEsperado1);
+            assertEquals(Main.calcularM(1,2,3,4),resultadoEsperado1);
             double resultadoEsperado2 = 1;
-            assertEquals(EcuacionRecta.calcularM(4,3,2,1),resultadoEsperado2);
+            assertEquals(Main.calcularM(4,3,2,1),resultadoEsperado2);
         }
 
     @Test
