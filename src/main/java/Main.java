@@ -37,7 +37,42 @@ public class Main {
 
     }
 
+    public static double sumar(double x, double y) {
+        return (x + y);
+    }
+
+    public static double restar(double x, double y) {
+        return (x - y);
+
+    }
+
+    public static double multiplicar(double x, double y) {
+        return (x*y);
+    }
+
+    public static double dividir(double x, double y) {
+        return (x / y);
+    }
+
+    public static double mayorNum(double x, double y) {
+        return Math.max(x, y);
+    }
+
+    public static double menorNum(double x, double y) {
+        return Math.min(x, y);
+    }
+
+    public static double elevado(double base, double potencia) {
+        return Math.pow(base, potencia);
+    }
+
+    public static double porcentaje(double numero, double porcentaje) {
+        return (porcentaje*numero) / 100;
+    }
+
     public static boolean comprobarEc(double A, double B, double C) {
         return ((B * B) - 4 * A * C) < 0;
     }
+
+
 }
