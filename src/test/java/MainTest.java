@@ -1,16 +1,16 @@
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
-
 class MainTest {
 
-    @org.junit.jupiter.api.BeforeEach
-    void setUp() {
-    }
+        @BeforeEach
+        void setUp() {
+        }
 
-    @org.junit.jupiter.api.AfterEach
-    void tearDown() {
-    }
+        @AfterEach
+        void tearDown() {
+        }
 
     @org.junit.jupiter.api.Test
     void testPerimetroCuadrado() {
@@ -113,6 +113,27 @@ class MainTest {
         assertEquals(Main.CalculoDeX(3,2,6,4,3,2),resultadoEsperado1);
         double resultadoEsperado2 = -0.5;
         assertEquals(Main.CalculoDeX(0,2,6,4,3,7),resultadoEsperado2);
+    }
+
+        @Test
+        void testCalcularB() {
+            double resultadoEsperado1 = 1;
+            assertEquals(EcuacionRecta.calcularB(1,2,3,4),resultadoEsperado1);
+            double resultadoEsperado2 = -1;
+            assertEquals(EcuacionRecta.calcularB(4,3,2,1),resultadoEsperado2);
+        }
+        @Test
+        void testCalcularM() {
+            double resultadoEsperado1 = 1;
+            assertEquals(EcuacionRecta.calcularM(1,2,3,4),resultadoEsperado1);
+            double resultadoEsperado2 = 1;
+            assertEquals(EcuacionRecta.calcularM(4,3,2,1),resultadoEsperado2);
+        }
+
+    @Test
+    void testComprobarEc() {
+        assertTrue(Main.comprobarEc(1,-2,5));
+        assertFalse(Main.comprobarEc(2,4,-6));
     }
 
     @Test
