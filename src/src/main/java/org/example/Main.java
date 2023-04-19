@@ -18,17 +18,17 @@ public class Main {
         try {
             Scanner teclado = new Scanner(System.in);
             System.out.println("Ingrese el valor de A");
-            A = teclado.nextFloat();
+            A = teclado.nextDouble();
             System.out.println("Ingrese el valor de B");
-            B = teclado.nextFloat();
+            B = teclado.nextDouble();
             System.out.println("Ingrese el valor de C");
-            C = teclado.nextFloat();
+            C = teclado.nextDouble();
             System.out.println("Ingrese el valor de D");
-            D = teclado.nextFloat();
+            D = teclado.nextDouble();
             System.out.println("Ingrese el valor de E");
-            E = teclado.nextFloat();
+            E = teclado.nextDouble();
             System.out.println("Ingrese el valor de F");
-            F = teclado.nextFloat();
+            F = teclado.nextDouble();
         } catch (InputMismatchException e) {
             System.out.println("ingrese numeros (Si es decimal use comas)");
             System.exit(1);
